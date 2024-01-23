@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-
+// next.config.js
+module.exports = {
     reactStrictMode: true,
     webpack: (config, { webpack }) => {
         config.module.rules.push({
@@ -10,6 +9,11 @@ const nextConfig = {
 
         return config;
     },
-}
-
-module.exports = nextConfig
+    // Add the exportPathMap configuration for static HTML export
+    exportPathMap: async function () {
+        return {
+            '/': { page: '/' },
+            // Add other pages as needed
+        };
+    },
+};
