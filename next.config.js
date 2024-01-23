@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// next.config.js
+module.exports = {
+    reactStrictMode: true,
 
-module.exports = nextConfig
+    // Add the following export configuration:
+    target: 'experimental-serverless-trace',
+    exportPathMap: async function () {
+        return {
+            '/': { page: '/' },
+            // Add other pages as needed
+        };
+    },
+};
