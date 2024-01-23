@@ -21,6 +21,7 @@
     "undici": "^6.3.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "20.10.6",
     "@types/react": "18.2.47",
     "autoprefixer": "^10.0.1",
