@@ -1,19 +1,17 @@
-// next.config.js
-module.exports = {
-    reactStrictMode: true,
-    webpack: (config, { webpack }) => {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        });
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+    output: 'export',
 
-        return config;
-    },
-    // Add the exportPathMap configuration for static HTML export
-    exportPathMap: async function () {
-        return {
-            '/': { page: '/' },
-            // Add other pages as needed
-        };
-    },
-};
+    // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
+    // trailingSlash: true,
+
+    // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
+    // skipTrailingSlashRedirect: true,
+
+    // Optional: Change the output directory `out` -> `dist`
+    // distDir: 'dist',
+}
+
+module.exports = nextConfig
